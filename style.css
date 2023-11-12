@@ -1,15 +1,19 @@
+@font-face {
+    font-family: Anakotmai;
+    src: url(assets/anakotmai-medium.woff);
+}
+
+header {
+    text-align: center;   
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Anakotmai",sans-serif;
     margin: 0;
     padding: 0;
     background-color: #E2E6E9;
 }
 
-header {
-    text-align: center;
-
-    
-}
 
 
 main {
@@ -26,7 +30,11 @@ footer {
     background-color: #333;
     color: #fff;
 }
+.background-pic{
+    width:1500px;
+    height:515px;
 
+}
 .header-div{
     padding-top:89px;
     width:100%;
@@ -40,14 +48,16 @@ footer {
 
 .header-text{
     text-align: center;
-    width: 550px;
+    width: 800px;
     z-index: 10;
     margin-left:auto;
     margin-right:auto;
-    background-color: rgba(255, 255, 255, 0.7);
-    font-size: 50px;
+    background-color: rgba(46, 86, 110,0.85);
+    color:white;
+    font-size: 70px;
     margin-top:0;
     height:auto;
-    padding:10px;
+    padding:20px;
     border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
