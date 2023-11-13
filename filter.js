@@ -3,7 +3,7 @@ const contentFilter = document.querySelectorAll(".filter-div"); //all div with f
 
 
 filter_Container.forEach((element)=>{
-    console.log(element.children);
+    //console.log(element.children);
     for (let child of element.children){
         child.addEventListener('click',function(){
             if (child.id=="all") showAll();
