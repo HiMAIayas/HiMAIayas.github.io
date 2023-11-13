@@ -9,7 +9,7 @@ header {
 
 body {
     font-family: "Anakotmai",sans-serif;
-    font-size: 25px;
+    font-size: 16px;
     margin: 0;
     padding: 0;
     background-color: #E2E6E9;
@@ -27,15 +27,16 @@ footer {
 }
 
 ul{
-    margin-bottom: 70px;
+    margin-bottom: 50px;
+    margin-left:25px
 }
 .background-pic{
-    width:1500px;
-    height:515px;
+    width:1000px;
+    height:350px;
 
 }
 .header-div{
-    padding-top:89px;
+    padding-top:50px;
     width:100%;
     position:absolute;
     text-align: center;
@@ -47,13 +48,13 @@ ul{
 
 .header-text{
     text-align: center;
-    width: 800px;
+    width: 500px;
     z-index: 10;
     margin-left:auto;
     margin-right:auto;
     background-color: rgb(46, 86, 110);
     color:white;
-    font-size: 70px;
+    font-size: 40px;
     margin-top:0;
     height:auto;
     padding:20px;
@@ -63,7 +64,7 @@ ul{
 
 .topic{
     margin-bottom:0px;
-    font-size: 50px;
+    font-size: 25px;
     font-weight: bold;
 }
 .flex{
@@ -71,23 +72,38 @@ ul{
 }
 .line{
     text-align:left;
-    margin: 20px;
+    margin: 10px;
 }
-.list-header{
-    width:333px;
+.bold{
     font-weight: bold;
 }
-.list-detail{
+.light{
     font-weight:lighter;
 }
-
+.tab{
+    width:220px;
+}
 .toggle-button{
     background-color: transparent;
     border:0px;
     text-align: center;
     margin-right: 20px;
-    font-size: 40px;
+    font-size: 20px;
 }
 .hide{
     display: none;
+}
+.filter{
+    border: 2px solid black;
+    border-radius: 15px;
+    padding:5px;
+    padding-left:1em;
+    padding-right:1em;
+    margin-right:0.6em;
+}
+.filter:hover{
+    background-color: rgb(205, 205, 205);
+}
+.filter-container{
+    margin-bottom:10px;
 }

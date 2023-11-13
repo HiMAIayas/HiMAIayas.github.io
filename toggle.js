@@ -1,7 +1,5 @@
-
-
-let buttonList = document.querySelectorAll(".toggle-button");
-console.log(buttonList);
+const buttonList = document.querySelectorAll(".toggle-button");
+//console.log(buttonList);
 buttonList.forEach((element)=>{
     //console.log(element.id);
     element.addEventListener('click',function(){
@@ -11,7 +9,7 @@ buttonList.forEach((element)=>{
 
 
 function toggleShow(id){
-    let ul = document.getElementById(id+"-ul");
+    let ul = document.getElementById(id+"-content");
     let button = document.getElementById(id);
     //console.log(button.innerHTML);
     if (button.innerHTML=="&gt;"){ // "&gt;" = ">"

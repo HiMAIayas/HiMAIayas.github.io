@@ -30,19 +30,19 @@
             </div>
             
             <hr>
-            <ul id="skill-ul" class="hide">
+            <ul id="skill-content" class="hide">
                 <li>
                     <div class="line flex">
-                        <span class="list-header">Languages :</span>
-                        <span class="list-detail">
+                        <span class="bold tab">Languages :</span>
+                        <span class="light">
                             <div>Python, C++, Javascript, Java, Dart, R</div>
                         </span>
                     </div>
                 </li>
                 <li>
                     <div class="line flex">
-                        <span class="list-header">Frameworks & Libraries :</span>
-                        <span class="list-detail">
+                        <span class="bold tab">Frameworks & Libraries :</span>
+                        <span class="light">
                             <div>[Development]</div>
                             <div>[Data Science] Numpy, Pandas, Altair</div>
                         </span>
@@ -50,8 +50,8 @@
                 </li>
                 <li>
                     <div class="line flex">
-                        <span class="list-header">Tools & Services :</span>
-                        <span class="list-detail">
+                        <span class="bold tab">Tools & Services :</span>
+                        <span class="light">
                             <div>Git, Github, Firebase</div>
                         </span>
                     </div>
@@ -66,22 +66,95 @@
             </div>
             
             <hr>
-            <ul id="edu-ul" class="hide">
+            <ul id="edu-content" class="hide">
                 <li>
                     <div class="line flex">
-                        <span class="list-header">Languages :</span>
-                        <span class="list-detail">
-                            <div>Python, C++, Javascript, Dart</div>
+                        <span class="bold tab">[B.Sc.]</span>
+                        <span class="light">
+                            <div>Digital Engineering, SIIT, Thammasat University 2023-Current</div>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="line flex">
+                        <span class="bold tab">[High School]</span>
+                        <span class="light">
+                            <div>Mahidol Wittayanusorn School 2020-2022 (GPA 3.97)</div>
                         </span>
                     </div>
                 </li>
 
             </ul>
+
+        </section>
+
+        <section>
+            <div class="topic flex">
+                <button id="project" class="toggle-button topic">></button>
+                <div class="topic">Project</div>
+            </div>
+            
+            <hr>
+
+            <ul id="project-content" class="hide">
+                <div class="flex filter-container">
+                    <div class="filter" id="all">Show All</div>
+                    <div class="filter" id="web">Web Dev</div>
+                    <div class="filter" id="app">App Dev</div>
+                    <div class="filter" id="ml">Machine Learning</div>
+                    <div class="filter" id="data">Data Vis</div>
+                </div>
+                <div class="filter-div webF">WEBDEV1</div>
+                <div class="filter-div webF">WEBDEV2</div>
+                <div class="filter-div appF">APPDEV1</div>
+                <div class="filter-div mlF webF">machine</div>
+                <div class="filter-div dataF">Data Vis</div>
+
+            </ul>
+        </section>
+        
+        <section>
+            <div class="topic flex">
+                <button id="achieve" class="toggle-button topic">></button>
+                <div class="topic">Achievements</div>
+            </div>
+            
+            <hr>
+            <ul id="achieve-content" class="hide">
+                <li>
+                    <div class="line flex">
+                        <span class="bold tab">2022</span>
+                        <span class="light">
+                            <div>MWIT STEM Challenge</div>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="topic flex">
+                <button id="exp" class="toggle-button topic">></button>
+                <div class="topic">Related Experiences</div>
+            </div>
+            
+            <hr>
+            <ul id="exp-content" class="hide">
+                <li>
+                    <div class="line flex">
+                        <span class="bold tab">2022</span>
+                        <span class="light">
+                            <div>Some experience</div>
+                        </span>
+                    </div>
+                </li>
+            </ul>
         </section>
         
 
     </main>
-    <script src="main.js"></script>
+    <script src="toggle.js"></script>
+    <script src="filter.js"></script>
 
     <footer>
         <p>&copy; 2023 Copyrights bla bla bla</p>
