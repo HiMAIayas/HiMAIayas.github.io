@@ -9,26 +9,25 @@ header {
 
 body {
     font-family: "Anakotmai",sans-serif;
+    font-size: 25px;
     margin: 0;
     padding: 0;
     background-color: #E2E6E9;
 }
 
-
-
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+main{
+    padding-left:7%;
+    padding-right:7%;
 }
-
 footer {
     text-align: center;
     padding: 1em;
     background-color: #333;
     color: #fff;
+}
+
+ul{
+    margin-bottom: 70px;
 }
 .background-pic{
     width:1500px;
@@ -52,7 +51,7 @@ footer {
     z-index: 10;
     margin-left:auto;
     margin-right:auto;
-    background-color: rgba(46, 86, 110,0.85);
+    background-color: rgb(46, 86, 110);
     color:white;
     font-size: 70px;
     margin-top:0;
@@ -60,4 +59,35 @@ footer {
     padding:20px;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.topic{
+    margin-bottom:0px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.flex{
+    display:inline-flex;
+}
+.line{
+    text-align:left;
+    margin: 20px;
+}
+.list-header{
+    width:333px;
+    font-weight: bold;
+}
+.list-detail{
+    font-weight:lighter;
+}
+
+.toggle-button{
+    background-color: transparent;
+    border:0px;
+    text-align: center;
+    margin-right: 20px;
+    font-size: 40px;
+}
+.hide{
+    display: none;
 }

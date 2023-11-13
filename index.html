@@ -16,30 +16,78 @@
     </div>
     <header>
         <img class="background-pic" src="images/polymountain_cleaned.png">
-        
     </header>
 
 
     <nav>
 
     </nav>
-
     <main>
-        <article>
-            <h2>Blog Post Title</h2>
-            <p>Published on <time datetime="2023-11-12">November 12, 2023</time></p>
-            <p>This is the content of your blog post. Write about your experiences, thoughts, or anything you'd like to share.</p>
-        </article>
+        <section>
+            <div class="topic flex">
+                <button id="skill" class="toggle-button topic">></button>
+                <div class="topic">Skills</div>
+            </div>
+            
+            <hr>
+            <ul id="skill-ul" class="hide">
+                <li>
+                    <div class="line flex">
+                        <span class="list-header">Languages :</span>
+                        <span class="list-detail">
+                            <div>Python, C++, Javascript, Java, Dart, R</div>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="line flex">
+                        <span class="list-header">Frameworks & Libraries :</span>
+                        <span class="list-detail">
+                            <div>[Development]</div>
+                            <div>[Data Science] Numpy, Pandas, Altair</div>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="line flex">
+                        <span class="list-header">Tools & Services :</span>
+                        <span class="list-detail">
+                            <div>Git, Github, Firebase</div>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </section>
 
-        <!-- Add more articles as needed -->
+        <section>
+            <div class="topic flex">
+                <button id="edu" class="toggle-button topic">></button>
+                <div class="topic">Education</div>
+            </div>
+            
+            <hr>
+            <ul id="edu-ul" class="hide">
+                <li>
+                    <div class="line flex">
+                        <span class="list-header">Languages :</span>
+                        <span class="list-detail">
+                            <div>Python, C++, Javascript, Dart</div>
+                        </span>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+        
+
     </main>
+    <script src="main.js"></script>
 
     <footer>
-        <p>&copy; 2023 Your Personal Blog</p>
+        <p>&copy; 2023 Copyrights bla bla bla</p>
     </footer>
 </body>
 </html>
-This is a basic template that you can use as a starting point. Feel free to add more sections, customize styles, and structure as per your requirements. If you have specific features or layouts in mind, you can modify the code accordingly.
 
 
 
