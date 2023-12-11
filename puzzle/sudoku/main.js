@@ -12,6 +12,8 @@ let clue_inp = document.getElementById('clue-input');
 const gen_button = document.getElementById("generate-button");
 gen_button.addEventListener('click',onGenerateClick);
 
+let number=document.getElementById("number");
+
 
 
 
@@ -45,6 +47,10 @@ let table=document.getElementById("table");
 
 
 function onGenerateClick(){
+    table.classList.remove('hidden');
+    number.classList.remove('hidden');
+    sub_button.classList.remove('hidden');
+
     table.replaceChildren();
     [puzzle,solution] = generate(clue_inp.value);
     displayPuzzle(puzzle);
@@ -85,7 +91,7 @@ function displayPuzzle(puzzle)
 
 
 //display numPad under puzzle
-let number=document.getElementById("number");
+
 for (let i=0; i<9; i++){
     let numPad = document.createElement('div');
     numPad.className="tile";
