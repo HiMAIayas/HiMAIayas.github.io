@@ -1,3 +1,6 @@
-Sudoku puzzle
-https://himaiayas.github.io/puzzle/sudoku/
+# Sudoku puzzle 
 *unfinished*
+
+https://himaiayas.github.io/puzzle/sudoku/
+
+
