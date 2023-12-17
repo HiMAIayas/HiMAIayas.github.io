@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Sudoku</title>
-        <link rel="stylesheet" href="sudoku.css">
-    </head>
-    <body>
-        <header>
-            <p>Sudoku</p>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="sudoku.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-button current-nav" id="nav-puzzle">Sudoku Puzzle</div>
+            <div class="nav-button" id="nav-solver">Sudoku Solver</div>
+        </nav>
+    </header>
+    <br>
+    <div class="page" id="puzzle-page">
+        <div class="head-puzzle">
             <label for="clue-input">Number of Clues: </label>
             <input id="clue-input" value=30>
             <button id="generate-button">Generate</button>
+            <div class="warning" id="warning"></div>
+        </div>
+        <hr>
 
-        </header>
-        <br>
-        <div class="grid table hidden" id="table"></div>
-        <br>
-        <br>
-        <div class="grid number hidden" id="number"></div>
-        <button class="submit-button hidden" id="submit-button">Submit</button>
+        <div class="flex hidden" id="play-sudoku">
+            <div class="grid-table" id="table"></div>
+            <div class="right-side">
+                <div class="grid-number" id="number"></div>
+                <button class="submit-button" id="submit-button">Submit</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="page hidden" id="solver-page">
+        <div class="grid-table" id="solver-table"></div>
 
 
-        <script type="module" src="generate.js"></script>
-        <script type="module" src="main.js"></script>
-    </body>
+
+    </div>
+
+    <script type="module" src="generate.js"></script>
+    <script type="module" src="main.js"></script>
+    <script src="changePage.js"></script>
+    <script src="solver.js"></script>
+</body>
+
 </html>

@@ -13,32 +13,11 @@ const gen_button = document.getElementById("generate-button");
 gen_button.addEventListener('click',onGenerateClick);
 
 let number=document.getElementById("number");
+let play_puzzle=document.getElementById("play-sudoku");
 
 
-
-
-let puzzle = [
-    [0,0,9,0,5,0,0,0,0],
-    [0,0,0,0,0,0,7,0,6],
-    [0,0,0,0,0,0,0,0,4],
-    [4,7,0,0,0,0,6,0,0],
-    [0,0,0,3,9,0,0,5,0],
-    [0,0,0,8,0,0,0,0,0],
-    [0,0,0,2,0,0,0,8,0],
-    [6,1,0,0,0,0,0,0,0],
-    [7,0,0,0,0,0,0,0,0]
-];
-let solution = [
-    [2,6,9,7,5,4,8,1,3],
-    [5,4,1,9,8,3,7,2,6],
-    [8,3,7,6,1,2,5,9,4],
-    [4,7,8,1,2,5,6,3,9],
-    [1,2,6,3,9,7,4,5,8],
-    [3,9,5,8,4,6,2,7,1],
-    [9,5,4,2,6,1,3,8,7],
-    [6,1,3,5,7,8,9,4,2],
-    [7,8,2,4,3,9,1,6,5]
-];
+let puzzle = [];
+let solution = [];
 
 
 
@@ -47,11 +26,11 @@ let table=document.getElementById("table");
 
 
 function onGenerateClick(){
-    table.classList.remove('hidden');
-    number.classList.remove('hidden');
-    sub_button.classList.remove('hidden');
+    play_puzzle.classList.remove('hidden');
+    isTileSelected=false
+    coordinate="00";
 
-    table.replaceChildren();
+    table.replaceChildren(); //reset puzzle board
     [puzzle,solution] = generate(clue_inp.value);
     displayPuzzle(puzzle);
     //TODO: global solution;
@@ -89,12 +68,11 @@ function displayPuzzle(puzzle)
     }
 }
 
-
 //display numPad under puzzle
 
 for (let i=0; i<9; i++){
     let numPad = document.createElement('div');
-    numPad.className="tile";
+    numPad.className="numpad";
     numPad.innerHTML=i+1;
     numPad.addEventListener('click',function(){
         clickNumPad(i+1);
@@ -115,10 +93,10 @@ function onTileSelected(coor)
 
 function clickNumPad(num)
 {
-    let cur_tile = document.getElementById(coordinate);
-    cur_tile.innerHTML = num;
-    cur_tile.classList.remove('selected');
-    isTileSelected = false;
+    if (isTileSelected){
+        let cur_tile = document.getElementById(coordinate);
+        cur_tile.innerHTML = num;
+    }
 }
 
 function submit()
@@ -143,8 +121,6 @@ document.addEventListener('keydown',function(event){
     if (event.key=="Backspace" && isTileSelected){
         let cur_tile = document.getElementById(coordinate);
         cur_tile.innerHTML = "";
-        cur_tile.classList.remove('selected');
-        isTileSelected = false;
 
     }
     else if (event.key-'0'>=1 && event.key-'0'<=9 && isTileSelected){

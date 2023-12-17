@@ -1,29 +1,82 @@
-body{
-    text-align: center;
+@font-face {
+    font-family: 'Roboto';
+    src: url(fonts/Roboto-Medium.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url(fonts/Roboto-Regular.ttf);
+    font-weight: normal;
+}
 
+
+
+body{
+    font-family: 'Roboto';
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
 }
 header{
     margin:0 auto;
     text-align: left;
 }
-
-.grid{
+nav{
+    display: inline-flex;
+    margin-right:0 auto;
+    width: 100%;
+    justify-content: center;
+}
+.nav-button{
+    color:rgb(4, 4, 98);
+    padding:5px;
+    padding-left: 10px;
+    padding-right:10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.nav-button:hover{
+    background-color: rgb(238, 239, 250);
+}
+.current-nav{
+    text-decoration: underline;
+}
+.page{
+    margin:auto;
+    margin-top: 50px;
+}
+.head-puzzle{
+    text-align: left;
+}
+.flex{
+    width: auto;
+    display:inline-flex;
+    align-items: center;
+    justify-content: middle;
+    margin:auto;
+    margin-top: 40px;
+}
+.right-side{
+    margin-left: 20px;
+}
+.grid-table{
     width:450px;
     height:450px;
-    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border: 2px solid black;
 }
-.table{
-    width:450px;
-    height:450px;
-}
-.number{
-    width:450px;
-    height:50px;
+
+.grid-number{
+    width:270px;
+    height:270px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .tile{
+    font-size: 20px;
+    height: 50px;
     background-color: white;
     border:1px solid rgb(234, 234, 234);
     box-sizing: border-box;
@@ -31,14 +84,25 @@ header{
     justify-content: center;
     align-items: center;
 }
-.tile:hover{
-    background-color: whitesmoke;
+
+.numpad{
+    font-size: 25px;
+    background-color: rgb(163, 163, 212);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:2px;
+    border-radius: 5px;
 }
 .selected{
     background-color: whitesmoke;
 }
 .answer-tile{
     color: blue;
+}
+.answer-tile:hover{
+    background-color: whitesmoke;
 }
 .left-line{
     border-left:1px solid black;
@@ -62,4 +126,8 @@ header{
 
 .hidden{
     display: none;
+}
+
+.warning{
+    color:red;
 }
