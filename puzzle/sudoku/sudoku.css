@@ -131,3 +131,7 @@ nav{
 .warning{
     color:red;
 }
+
+.wrong-ans{
+    background-color: red;
+}

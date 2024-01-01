@@ -13,7 +13,8 @@ const gen_button = document.getElementById("generate-button");
 gen_button.addEventListener('click',onGenerateClick);
 
 let number=document.getElementById("number");
-let play_puzzle=document.getElementById("play-sudoku");
+let play_puzzle=document.getElementById("play-sudoku"); //inline-flex
+let sol = document.getElementById("solution");
 
 
 let puzzle = [];
@@ -26,6 +27,7 @@ let table=document.getElementById("table");
 
 
 function onGenerateClick(){
+    sol.classList.add("hidden");
     play_puzzle.classList.remove('hidden');
     isTileSelected=false
     coordinate="00";
@@ -112,7 +114,38 @@ function submit()
     }
 
     if (isCorrect) alert('Correct');
-    else alert('wrong');
+    else {
+        showSolution();
+        alert('wrong');
+    }
+}
+
+function showSolution()
+{
+    let sol_table = document.getElementById("table-solution");
+    sol_table.replaceChildren();
+
+    for (let i=0; i<9; i++){
+        for (let j=0; j<9; j++){
+            let tile = document.createElement('div');
+            let ans_tile = document.getElementById(i.toString()+j.toString());
+
+            tile.className = 'tile';
+
+            if (i==2 || i==5) tile.classList.add("bottom-line");
+            else if (i==3 || i==6) tile.classList.add("top-line");
+            
+            if (j==2 || j==5) tile.classList.add("right-line");
+            else if (j==3 || j==6) tile.classList.add("left-line");
+
+            tile.innerHTML = solution[i][j];
+            if (ans_tile.innerHTML!=solution[i][j]) tile.classList.add('wrong-ans');
+
+            sol_table.appendChild(tile);
+            
+        }
+    }
+    sol.classList.remove('hidden');
 }
 
 /////////////////////////////////////////////////////////////////////////
