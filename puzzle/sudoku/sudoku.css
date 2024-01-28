@@ -133,5 +133,14 @@ nav{
 }
 
 .wrong-ans{
-    background-color: red;
+    background-color: rgb(232, 137, 137);
+}
+.sol{
+    margin-top: 100px;
+}
+.sol-flex{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
