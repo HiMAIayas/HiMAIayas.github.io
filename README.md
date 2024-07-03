@@ -1,2 +1,0 @@
-# HiMAIayas.github.io
-resume
