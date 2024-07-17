@@ -1,23 +1,39 @@
 "use client"
 
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Link from 'next/link'
 
 interface RefProps{
   background_ref:React.MutableRefObject<HTMLInputElement | null>;
   project_ref:React.MutableRefObject<HTMLInputElement | null>;
+  contact_ref:React.MutableRefObject<HTMLInputElement | null>;
 }
 
-export default function Navbar({background_ref,project_ref}:RefProps){
+export default function Navbar({background_ref,project_ref,contact_ref}:RefProps){
   const [isOpen, setIsOpen] = useState(false);
+  const [nav,setNav] = useState("transparent");
+
+
+  //Functions
   const autoScroll = (ref:React.MutableRefObject<HTMLInputElement | null>)=>{
     if (ref.current){
-      ref.current.scrollIntoView({ behavior: "smooth"});
+      ref.current.scrollIntoView({ behavior: "smooth", block:"start"});
     }
   }
+
+  const scrollEventListener = () =>{
+    if (window.scrollY>screen.height/4) setNav("colored");
+    else setNav("transparent");
+  }
+
+
+  useEffect(()=>{
+    window.addEventListener('scroll',scrollEventListener);
+  },[]);
   
+
   return (
-    <div className='fixed top-0 left-0 z-9 w-full flex items-center justify-between px-20 py-4 h-12 bg-black text-white'>
+    <div className={`fixed top-0 left-0 z-50 w-full flex items-center justify-between px-20 py-10 h-12 font-bold ${(nav=="transparent")? "bg-transparent text-white":"bg-white text-black"} ease-in-out duration-500`}>
         {/*Logo*/}
         <div className=''>
             <Link href="/">Home</Link>
@@ -25,8 +41,9 @@ export default function Navbar({background_ref,project_ref}:RefProps){
 
         {/*Center*/}
         <div className='hidden md:flex gap-20'>
-          <div onClick={()=>autoScroll(background_ref)}>Background</div>
-          <div onClick={()=>autoScroll(project_ref)}>Projects</div>
+          <div className='hover:bg-black cursor-pointer' onClick={()=>autoScroll(background_ref)}>Background</div>
+          <div className='cursor-pointer' onClick={()=>autoScroll(project_ref)}>Projects</div>
+          <div className='cursor-pointer' onClick={()=>autoScroll(contact_ref)}>Contacts</div>
         </div>
 
         {/*Hamburgur*/}
@@ -41,8 +58,9 @@ export default function Navbar({background_ref,project_ref}:RefProps){
 
         {isOpen && (
             <div className='absolute left-0 top-20 w-full bg-blue-500 z-10'>
-                <div onClick={()=>autoScroll(background_ref)}>Background</div>
-                <div onClick={()=>autoScroll(project_ref)}>Projects</div>
+                <div className='cursor-pointer' onClick={()=>autoScroll(background_ref)}>Background</div>
+                <div className='cursor-pointer' onClick={()=>autoScroll(project_ref)}>Projects</div>
+                <div className='cursor-pointer' onClick={()=>autoScroll(contact_ref)}>Contacts</div>
             </div>
         )}
     </div>
