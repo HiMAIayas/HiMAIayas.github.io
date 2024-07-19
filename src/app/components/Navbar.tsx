@@ -33,17 +33,16 @@ export default function Navbar({background_ref,project_ref,contact_ref}:RefProps
   
 
   return (
-    <div className={`fixed top-0 left-0 z-50 w-full flex items-center justify-between px-20 py-10 h-12 font-bold ${(nav=="transparent")? "bg-transparent text-white":"bg-white text-black"} ease-in-out duration-500`}>
+    <div className={`fixed top-0 left-0 z-50 w-full flex items-center md:justify-center justify-end px-20 py-10 h-12 md:bg-transparent ${(nav=="transparent")? "bg-transparent text-white":"bg-white"} ease-in-out duration-500`}>
         {/*Logo*/}
-        <div className=''>
-            <Link href="/">Home</Link>
-        </div>
+        
 
         {/*Center*/}
-        <div className='hidden md:flex gap-20'>
-          <div className='hover:bg-black cursor-pointer' onClick={()=>autoScroll(background_ref)}>Background</div>
-          <div className='cursor-pointer' onClick={()=>autoScroll(project_ref)}>Projects</div>
-          <div className='cursor-pointer' onClick={()=>autoScroll(contact_ref)}>Contacts</div>
+        <div className={`text-sm hidden md:flex rounded-full px-5 py-3 gap-16 shadow-md ${(nav=="transparent"? "bg-transparent text-white":"bg-slate-50/75 backdrop-blur-sm text-black")} ease-in-out duration-500`}>
+          <div className='cursor-pointer'>Home</div>
+          <div className='cursor-pointer' onClick={()=>autoScroll(background_ref)}>About</div>
+          <div className='cursor-pointer' onClick={()=>autoScroll(project_ref)}>Skills</div>
+          <div className='cursor-pointer' onClick={()=>autoScroll(contact_ref)}>Showcases</div>
         </div>
 
         {/*Hamburgur*/}
