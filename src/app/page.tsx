@@ -42,7 +42,7 @@ export default function Home() {
         <div className="text-3xl text-white font-bold mb-8">About Me</div>
 
         <div className="text-white">
-          I'm digital enginnering student at SIIT, Thammasat University, Thailand. ค่อยใส่เพิ่มไดไม ขก.คิด
+          I am digital enginnering student at SIIT, Thammasat University, Thailand. ค่อยใส่เพิ่มไดไม ขก.คิด
         </div>
 
       </div>
