@@ -56,7 +56,7 @@ export default function Navbar({background_ref,project_ref,contact_ref}:RefProps
         </div>
 
         {isOpen && (
-            <div className='absolute left-0 top-20 w-full bg-blue-500 z-10'>
+            <div className='absolute left-0 top-20 w-full bg-black z-10'>
                 <div className='cursor-pointer' onClick={()=>autoScroll(background_ref)}>Background</div>
                 <div className='cursor-pointer' onClick={()=>autoScroll(project_ref)}>Projects</div>
                 <div className='cursor-pointer' onClick={()=>autoScroll(contact_ref)}>Contacts</div>
