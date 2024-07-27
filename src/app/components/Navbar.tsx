@@ -79,57 +79,58 @@ export default function Navbar({ refArr }: RefProps) {
           </div>
 
           <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={"closed"}
-              animate={"open"}
-              exit={"closed"}
-            >
-              <motion.div className='absolute left-0 top-0 w-full h-screen flex items-center justify-center bg-white origin-top'
-                variants={{
-                  open: {
-                    scaleY: 1,
-                    transition: {
-                      type: "spring", bounce: 0, duration: 0.5, delayChildren: 0.3, staggerChildren: 0.05
-                    }
-                  },
-                  closed: {
-                    scaleY: 0,
-                    transition: { type: "spring", bounce: 0, duration: 0.3 }
-                  }
-                }}
+            {isOpen && (
+              <motion.div
+                initial={"closed"}
+                animate={"open"}
+                exit={"closed"}
               >
-                <div className='flex flex-col h-3/4 w-full justify-evenly'>
-                  {titles.map((title, index) => (
-                    <motion.div className='overflow-hidden w-full flex justify-center bg-white cursor-pointer text-xl font-extrabold py-3'
-                      whileTap={{ backgroundColor: "#EBEBEB" }}
-                      onClick={() => {
-                        navClick(refArr[index], title);
-                        setIsOpen(false);
-                      }}
-                    >
-                      <motion.span 
+                <motion.div className='absolute left-0 top-0 w-full h-screen flex items-center justify-center bg-white origin-top'
+                  variants={{
+                    open: {
+                      scaleY: 1,
+                      transition: {
+                        type: "spring", bounce: 0, duration: 0.5, delayChildren: 0.3, staggerChildren: 0.05
+                      }
+                    },
+                    closed: {
+                      scaleY: 0,
+                      transition: { type: "spring", bounce: 0, duration: 0.3 }
+                    }
+                  }}
+                >
+                  <div className='flex flex-col h-3/4 w-full justify-evenly'>
+                    {titles.map((title, index) => (
+                      <motion.div className='overflow-hidden w-full flex justify-center bg-white cursor-pointer text-xl font-extrabold py-3'
                         key={title}
-                        variants={{
-                          open: {
-                            opacity: 1,
-                            y: 0,
-                            transition: { type: "spring", stiffness: 300, damping: 24 }
-                          },
-                          closed: {
-                            opacity: 0,
-                            y: 20,
-                            transition: { duration: 0.4 }
-                          }
+                        whileTap={{ backgroundColor: "#EBEBEB" }}
+                        onClick={() => {
+                          navClick(refArr[index], title);
+                          setIsOpen(false);
                         }}
+                      >
+                        <motion.span
 
-                      >{title}</motion.span>
-                    </motion.div>
-                  ))}
-                </div>
+                          variants={{
+                            open: {
+                              opacity: 1,
+                              y: 0,
+                              transition: { type: "spring", stiffness: 300, damping: 24 }
+                            },
+                            closed: {
+                              opacity: 0,
+                              y: 20,
+                              transition: { duration: 0.4 }
+                            }
+                          }}
+
+                        >{title}</motion.span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          )}
+            )}
           </AnimatePresence>
         </div>
       </div>
