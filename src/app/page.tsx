@@ -10,7 +10,11 @@ import { titles } from "./libs/data";
 export default function Home() {
 
 
-  const refArr = useActiveSectionRef(titles);
+  const home_ref = useActiveSectionRef(titles[0]);
+  const about_ref = useActiveSectionRef(titles[0]);
+  const skill_ref = useActiveSectionRef(titles[0]);
+  const showcase_ref = useActiveSectionRef(titles[0]);
+  const refArr = [home_ref, about_ref, skill_ref, showcase_ref];
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
@@ -20,8 +24,8 @@ export default function Home() {
 
 
 
-      {/*Background Cover*/}
-      <div ref={refArr[0]} className="w-full bg-cover bg-[rgba(0,0,0,0.7)]">
+      {/*Background Cover (Home)*/}
+      <div ref={home_ref} className="w-full bg-cover bg-[rgba(0,0,0,0.7)]">
         <img className="z-0 min-h-screen object-cover mix-blend-overlay" src="/mountain-bg.jpg"></img>
         <div className="z-1 absolute h-screen top-0 left-0 flex flex-col gap-5 w-full justify-center items-center">
           <div className="text-white text-wrap text-6xl font-bold">Phumipas Namjaidee</div>
@@ -35,7 +39,7 @@ export default function Home() {
 
 
       {/*About*/}
-      <div ref={refArr[1]} className="w-full flex flex-col items-center px-48 pb-10 bg-[#05030b]">
+      <div ref={about_ref} className="w-full flex flex-col items-center px-48 pb-10 bg-[#05030b]">
         <div className="text-3xl text-white font-bold mb-8">About Me</div>
 
         <div className="text-white">
@@ -46,7 +50,7 @@ export default function Home() {
 
 
       {/*Skill*/}
-      <div ref={refArr[2]} className="px-5 py-12 w-full bg-slate-100 flex flex-col items-center">
+      <div ref={skill_ref} className="px-5 py-12 w-full bg-slate-100 flex flex-col items-center">
         <div className="text-4xl font-bold">Skills</div>
         <div className=" flex gap-5 mt-16 items-start lg:flex-row flex-col">
           <div className=" rounded-2xl bg-white p-5 shadow-md">
@@ -91,7 +95,7 @@ export default function Home() {
 
 
       {/*Project*/}
-      <div ref={refArr[3]} className="px-5 py-12 w-full bg-slate-100 flex flex-col items-center">
+      <div ref={showcase_ref} className="px-5 py-12 w-full bg-slate-100 flex flex-col items-center">
         <div className="text-4xl font-bold">Showcases</div>
         <div>
 
