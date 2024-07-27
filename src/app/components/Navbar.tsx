@@ -47,14 +47,13 @@ export default function Navbar({ refArr }: RefProps) {
 
           {titles.map((title,index)=>(
 
-            <div className='relative cursor-pointer px-2 py-1'>
+            <div className='relative cursor-pointer px-2 py-1' key={title}>
               <span className="mix-blend-difference relative z-50 text-white"
               onClick={()=>navClick(refArr[index],title)}
               >{title}</span>
 
               {activeSection===title && (
                 <motion.div className={`absolute  top-0 left-0 w-full h-full rounded-full z-40 ${(nav == "transparent"?"bg-transparent":"bg-white")} `}
-                key={title}
                 layoutId='underlined'
                 transition={{
                   ease:'easeInOut',
@@ -81,7 +80,7 @@ export default function Navbar({ refArr }: RefProps) {
 
           {isOpen && (
             <div className='absolute left-0 top-20 w-full bg-black z-10 origin-top' >
-              
+
               {titles.map((title,index)=>(
                 <div key={title} className='cursor-pointer' 
                 onClick={()=>navClick(refArr[index],title)}>{title}</div>
