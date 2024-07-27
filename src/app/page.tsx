@@ -11,9 +11,9 @@ export default function Home() {
 
 
   const home_ref = useActiveSectionRef(titles[0]);
-  const about_ref = useActiveSectionRef(titles[0]);
-  const skill_ref = useActiveSectionRef(titles[0]);
-  const showcase_ref = useActiveSectionRef(titles[0]);
+  const about_ref = useActiveSectionRef(titles[1]);
+  const skill_ref = useActiveSectionRef(titles[2]);
+  const showcase_ref = useActiveSectionRef(titles[3]);
   const refArr = [home_ref, about_ref, skill_ref, showcase_ref];
 
   return (
@@ -52,7 +52,7 @@ export default function Home() {
       {/*Skill*/}
       <div ref={skill_ref} className="px-5 py-12 w-full bg-slate-100 flex flex-col items-center">
         <div className="text-4xl font-bold">Skills</div>
-        <div className=" flex gap-5 mt-16 items-start lg:flex-row flex-col">
+        <div className=" flex gap-5 mt-16 items-start flex-row justify-center flex-wrap">
           <div className=" rounded-2xl bg-white p-5 shadow-md">
             <div className="text-xl w-full text-center font-bold mb-5">Languages</div>
             <div className="grid grid-cols-3 lg:grid-cols-3 gap-8 w-full rounded-2xl bg-slate-100 p-5">
