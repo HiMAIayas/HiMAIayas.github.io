@@ -4,19 +4,17 @@ import Image from "next/image";
 import { useRef } from "react";
 import Navbar from "./components/Navbar";
 import LogoCard from "./components/LogoCard";
-import useActiveSection from "./hooks/useActiveSection";
+import useActiveSectionRef from "./hooks/useActiveSectionRef";
 import { titles } from "./libs/data";
 
 export default function Home() {
 
-  const home_ref = useActiveSection("About");
-  const about_ref = useActiveSection("About");
-  const skill_ref = useActiveSection("Skills");
-  const showcase_ref = useActiveSection("Showcases");
-  const refArr = titles.map((title)=>useActiveSection(title));
+
+  const refArr = useActiveSectionRef(titles);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
+      
 
       <Navbar refArr={refArr}></Navbar>
 
