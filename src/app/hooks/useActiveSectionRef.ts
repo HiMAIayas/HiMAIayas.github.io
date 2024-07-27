@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useSectionContext } from '../contexts/SectionContext';
 import { useInView } from 'framer-motion';
 
-function getActiveSectionRef(title:string) {
+function useActiveSection(title:string) {
     const {setActiveSection,lastClick} = useSectionContext();
     const ref = useRef(null);
     const inView = useInView(ref,{margin:"-49% 0%"});
@@ -16,6 +16,6 @@ function getActiveSectionRef(title:string) {
 }
 
 export default function useActiveSectionRef(titles:Array<string>){
-    const refArr = titles.map((title)=>getActiveSectionRef(title));
+    const refArr = titles.map((title)=>useActiveSection(title));
     return refArr;
 }
