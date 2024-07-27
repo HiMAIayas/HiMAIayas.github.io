@@ -3,28 +3,27 @@
 import Image from "next/image";
 import { useRef } from "react";
 import Navbar from "./components/Navbar";
-import WrapperDropdown from "./components/WrapperDropdown";
 import LogoCard from "./components/LogoCard";
+import useActiveSection from "./hooks/useActiveSection";
+import { titles } from "./libs/data";
 
 export default function Home() {
 
-  const background_ref = useRef(null);
-  const project_ref = useRef(null);
-  const contact_ref = useRef(null);
+  const home_ref = useActiveSection("About");
+  const about_ref = useActiveSection("About");
+  const skill_ref = useActiveSection("Skills");
+  const showcase_ref = useActiveSection("Showcases");
+  const refArr = titles.map((title)=>useActiveSection(title));
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
 
-      <Navbar
-        background_ref={background_ref}
-        project_ref={project_ref}
-        contact_ref={contact_ref}
-      ></Navbar>
+      <Navbar refArr={refArr}></Navbar>
 
 
 
       {/*Background Cover*/}
-      <div className="w-full bg-cover bg-[rgba(0,0,0,0.7)]">
+      <div ref={refArr[0]} className="w-full bg-cover bg-[rgba(0,0,0,0.7)]">
         <img className="z-0 min-h-screen object-cover mix-blend-overlay" src="/mountain-bg.jpg"></img>
         <div className="z-1 absolute h-screen top-0 left-0 flex flex-col gap-5 w-full justify-center items-center">
           <div className="text-white text-wrap text-6xl font-bold">Phumipas Namjaidee</div>
@@ -38,7 +37,7 @@ export default function Home() {
 
 
       {/*About*/}
-      <div className="w-full flex flex-col items-center px-48 pb-10 bg-[#05030b]">
+      <div ref={refArr[1]} className="w-full flex flex-col items-center px-48 pb-10 bg-[#05030b]">
         <div className="text-3xl text-white font-bold mb-8">About Me</div>
 
         <div className="text-white">
@@ -49,7 +48,7 @@ export default function Home() {
 
 
       {/*Skill*/}
-      <div className="px-5 py-12 w-full bg-slate-100 flex flex-col items-center">
+      <div ref={refArr[2]} className="px-5 py-12 w-full bg-slate-100 flex flex-col items-center">
         <div className="text-4xl font-bold">Skills</div>
         <div className=" flex gap-5 mt-16 items-start lg:flex-row flex-col">
           <div className=" rounded-2xl bg-white p-5 shadow-md">
@@ -88,8 +87,13 @@ export default function Home() {
         </div>
       </div>
 
+
+
+      
+
+
       {/*Project*/}
-      <div className="px-5 py-12 w-full bg-slate-100 flex flex-col items-center">
+      <div ref={refArr[3]} className="px-5 py-12 w-full bg-slate-100 flex flex-col items-center">
         <div className="text-4xl font-bold">Showcases</div>
         <div>
 
