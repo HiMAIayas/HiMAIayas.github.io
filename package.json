@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^14.2.5",
+    "@vvo/tzdb": "^6.142.0",
     "framer-motion": "^11.3.18",
     "next": "14.2.4",
     "react": "^18",
