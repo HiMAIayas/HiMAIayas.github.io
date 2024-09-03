@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import LogoCard from "./components/LogoCard";
 import useActiveSectionRef from "./hooks/useActiveSectionRef";
 import { titles } from "./libs/data";
+import ProjectCard from "./components/ProjectCard";
 
 export default function Home() {
 
@@ -63,15 +64,12 @@ export default function Home() {
               <LogoCard logo_src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000" lang="CSS"></LogoCard>
               <LogoCard logo_src="https://img.icons8.com/?size=100&id=13679&format=png&color=000000" lang="Java"></LogoCard>
               <LogoCard logo_src="https://img.icons8.com/?size=100&id=TpULddJc4gTh&format=png&color=000000" lang="C++"></LogoCard>
-              <LogoCard logo_src="https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000" lang="Dart"></LogoCard>
             </div>
           </div>
           <div className=" rounded-2xl bg-white p-5 shadow-md">
             <div className="text-xl w-full text-center font-bold mb-5">Frameworks</div>
             <div className="grid grid-cols-3 lg:grid-cols-3 gap-8 w-full rounded-2xl bg-slate-100 p-5">
-              <LogoCard logo_src="https://img.icons8.com/?size=100&id=54087&format=png&color=000000" lang="NodeJS"></LogoCard>
               <LogoCard logo_src="https://img.icons8.com/?size=100&id=40253&format=png&color=000000" lang="Jquery"></LogoCard>
-              <LogoCard logo_src="https://img.icons8.com/?size=100&id=PndQWK6M1Hjo&format=png&color=000000" lang="Bootstrap"></LogoCard>
               <LogoCard logo_src="https://img.icons8.com/?size=100&id=123603&format=png&color=000000" lang="React"></LogoCard>
               <LogoCard logo_src="https://img.icons8.com/?size=100&id=MWiBjkuHeMVq&format=png&color=000000" lang="NextJS"></LogoCard>
               <LogoCard logo_src="https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000" lang="Flutter"></LogoCard>
@@ -82,7 +80,6 @@ export default function Home() {
             <div className="grid grid-cols-3 lg:grid-cols-3 gap-8 w-full rounded-2xl bg-slate-100 p-5">
               <LogoCard logo_src="https://img.icons8.com/?size=100&id=xSkewUSqtErH&format=png&color=000000" lang="Pandas"></LogoCard>
               <LogoCard logo_src="https://img.icons8.com/?size=100&id=aR9CXyMagKIS&format=png&color=000000" lang="Numpy"></LogoCard>
-              <LogoCard logo_src="https://img.icons8.com/?size=100&id=jH4BpkMnRrU5&format=png&color=000000" lang="Pytorch"></LogoCard>
 
             </div>
           </div>
@@ -98,7 +95,7 @@ export default function Home() {
       <div ref={showcase_ref} className="px-5 py-12 w-full bg-slate-100 flex flex-col items-center">
         <div className="text-4xl font-bold">Showcases</div>
         <div>
-
+          <ProjectCard></ProjectCard>
         </div>
       </div>
 
